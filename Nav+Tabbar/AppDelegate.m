@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RootTabbarViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    RootTabbarViewController * rootTabBarViewController= [[RootTabbarViewController alloc]init];
+    self.window.rootViewController = rootTabBarViewController;
+    [self.window makeKeyAndVisible];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:208.0f/255 green:38.0f/255 blue:43.0f/255 alpha:1.0f]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+ 
     // Override point for customization after application launch.
     return YES;
 }
